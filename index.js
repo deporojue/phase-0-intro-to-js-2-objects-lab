@@ -1,55 +1,28 @@
-/*original*/
 const employee = {
-    name: "babo",
-    streetAddress: "1 nice st.",
-};
-console.log("***** original *****")
-console.log("original:",employee)
-console.log("")
-
-/*update*/
-function updateEmployeeWithKeyAndValue(obj,key,value) {
-    const newObj = {...obj}
-    newObj[key]=value;
-    return newObj;
+    name: "babo babo",
+    streetAddress: "11 Babo Lane"
 }
 
-console.log("***** update *****")
-console.log("NEW:",updateEmployeeWithKeyAndValue(employee,"name","monkey"))
-console.log("original:",employee)
-console.log("")
-
-function destructivelyUpdateEmployeeWithKeyAndValue(obj,key,value) {
-    obj[key]=value;
-    return obj;
+function updateEmployeeWithKeyAndValue(employee, key, value) {
+    const newEmployee = {...employee}
+    newEmployee[key]=value;
+    return newEmployee;
 }
 
-console.log("modified:",destructivelyUpdateEmployeeWithKeyAndValue(employee,"name","orange"))
-console.log("original:",employee)
-console.log("")
-
-/*delete*/
-function deleteFromEmployeeByKey(obj,key) {
-    const newObj={...obj};
-    delete newObj[key];
-    return newObj;
+function destructivelyUpdateEmployeeWithKeyAndValue(employee, key, value) {
+    employee[key]=value;
+    return employee;
 }
 
-console.log("***** delete *****")
-console.log("new:",deleteFromEmployeeByKey(employee,"name"));
-console.log("original:",employee)
-console.log("")
+function deleteFromEmployeeByKey(employee, key) {
+    const newEmployee = {...employee}
+    delete newEmployee[key];
 
-function destructivelyDeleteFromEmployeeByKey(obj,key) {
-
-    delete obj[key];
-    return obj;
+    return newEmployee;
 }
 
-console.log(destructivelyDeleteFromEmployeeByKey(employee,"name"));
-console.log("original:",employee)
+function destructivelyDeleteFromEmployeeByKey(employee, key) {
+    delete employee[key];
 
-
-
-
-
+    return employee;
+}
